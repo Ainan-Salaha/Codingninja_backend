@@ -6,7 +6,7 @@ const route = require('./routes/authRoute');
 const cors = require('cors');
 const course = require('./courseApi/courseRoutes.js/CourseApiRoute')
 const PaymentRoute= require('./routes/paymentRoute')
-
+const form=require('./routes/formRoutes')
 //configure dot env 
 env.config();
 
@@ -18,6 +18,7 @@ app.use(express.json());
 app.use('/',route);
 app.use('/',PaymentRoute);
 app.use('/',course);
+app.use('/',form);
 
 //rest API
 app.get('/',(req,res)=>{
